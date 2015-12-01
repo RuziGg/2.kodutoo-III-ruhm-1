@@ -97,6 +97,8 @@
 			
 			if ( empty($_POST["create_email_confirm"]) ) {
 				$create_email_confirm_error = "See väli on kojustuslik";
+			}else{
+				$create_email_confirm = test_input($_POST["create_email_confirm"]);
 			}
 			
 			if ( empty($_POST["create_password"]) ) {
@@ -107,6 +109,8 @@
 				
 					$create_password_error = "Peab olema vähemalt 8 tähemärki pikk!";
 					
+				}else{
+					$create_password = test_input($_POST["create_password"]);
 				}
 			}
 				
@@ -118,6 +122,8 @@
 				
 					$create_password_confirm_error = "Peab olema vähemalt 8 tähemärki pikk!";
 					
+				}else{
+					$create_password_confirm = test_input($_POST["create_password_confirm"]);
 				}
 			}
 				if(	$create_email_error == "" && $create_password_error == ""){
@@ -155,8 +161,8 @@
 	<h2>Log in</h2>
 	
 		<form action="newfile.php" method="post" >
-			<input name="email" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Password"> <?php echo $password_error; ?><br><br>
+			<input name="email1" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
+			<input name="password1" type="password" placeholder="Password"> <?php echo $password_error; ?><br><br>
 			<input name="login" type="submit" value="Log in">
 		</form>
 		
